@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             link.classList.add("active");
-            link.classList.add("-bg-orange"); // Add the custom orange class to the current link
+            link.classList.add("--bs-orange"); // Add the custom orange class to the current link
         }
     });
 });
