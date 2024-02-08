@@ -2,6 +2,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const currentLocation = window.location.href;
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const navbarUl = document.querySelector(".navbar-nav");
+
+    // Get the computed style of the navbar's <ul> element
+    const ulComputedStyle = window.getComputedStyle(navbarUl);
+    const ulColor = ulComputedStyle.getPropertyValue("color");
 
     navLinks.forEach(link => {
         const linkHref = link.href; // Get the full URL of the link
@@ -10,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
             // Remove the active class from all links before adding it to the current one
             navLinks.forEach(navLink => {
                 navLink.classList.remove("active");
-                navLink.classList.remove("--bs-orange"); // Remove the custom orange class from all links
+                navLink.style.color = ""; // Remove any inline color styles
             });
 
             link.classList.add("active");
-            link.classList.add("--bs-orange"); // Add the custom orange class to the current link
+            link.style.color = ulColor; // Apply the color of the navbar <ul> to the active link
         }
     });
 });
