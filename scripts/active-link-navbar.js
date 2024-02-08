@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     const navbarUl = document.querySelector(".navbar-nav");
 
-    // Get the computed style of the navbar's <ul> element
-    const ulComputedStyle = window.getComputedStyle(navbarUl);
-    const ulColor = ulComputedStyle.getPropertyValue("color");
+    // Get the custom color from the data-color attribute of the navbar's <ul> element
+    const ulColor = navbarUl.getAttribute("data-color");
 
     navLinks.forEach(link => {
         const linkHref = link.href; // Get the full URL of the link
@@ -19,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             link.classList.add("active");
-            link.style.color = ulColor; // Apply the color of the navbar <ul> to the active link
+            link.style.color = ulColor; // Apply the custom color to the active link
         }
     });
 });
-
