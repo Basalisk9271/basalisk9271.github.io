@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     const navbarUl = document.querySelector(".navbar-nav");
 
-    // Get the custom color from the data-color attribute of the navbar's <ul> element
-    const ulColor = navbarUl.getAttribute("data-color");
+      // Get the custom color from the CSS variable --bs-orange
+      const ulColor = getComputedStyle(document.documentElement).getPropertyValue('--bs-orange');
 
     navLinks.forEach(link => {
         const linkHref = link.href; // Get the full URL of the link
