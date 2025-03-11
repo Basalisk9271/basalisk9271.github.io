@@ -11588,9 +11588,10 @@ html {
   max-width: 40rem;
 }
 .profile  .profile-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5vw;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: inherit;
   object-fit: cover; /* Ensures the image covers the container */
 }
 .profile .dots-1 {
